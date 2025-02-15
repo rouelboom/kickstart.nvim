@@ -82,6 +82,17 @@ return {
           },
         },
       },
+      -- Добавляем Python LSP
+      pyright = {
+        -- Дополнительные настройки, если нужны
+        -- settings = {
+        --   python = {
+        --     analysis = {
+        --       typeCheckingMode = "basic", -- "off", "basic", "strict"
+        --     }
+        --   }
+        -- }
+      },
       -- rust_analyzer = {},
       -- tsserver = {},
       -- и т.д.
@@ -91,6 +102,7 @@ return {
     require('mason').setup()
     local ensure_installed = vim.tbl_keys(servers)
     table.insert(ensure_installed, 'stylua')
+    table.insert(ensure_installed, 'pyright')
     require('mason-tool-installer').setup {
       ensure_installed = ensure_installed,
     }
