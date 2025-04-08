@@ -15,6 +15,8 @@ return require('lazy').setup({
   require 'plugins.todo-comments',
   require 'plugins.mini',
   require 'plugins.treesitter',
+  require 'plugins.nvim-tree',
+  --  require 'plugins.lspconfig',
 }, {
   -- Дополнительные настройки UI
   ui = {

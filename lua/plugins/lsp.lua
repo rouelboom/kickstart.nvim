@@ -84,18 +84,26 @@ return {
       },
       -- Добавляем Python LSP
       pyright = {
-        -- Дополнительные настройки, если нужны
-        -- settings = {
-        --   python = {
-        --     analysis = {
-        --       typeCheckingMode = "basic", -- "off", "basic", "strict"
-        --     }
-        --   }
-        -- }
+        settings = {
+          python = {
+            pythonPath = (function()
+              local venv_path = os.getenv 'VIRTUAL_ENV'
+              if venv_path then
+                return venv_path .. '/bin/python'
+              else
+                return vim.fn.exepath 'python'
+              end
+            end)(),
+            -- Если необходимо, можно добавить дополнительные настройки:
+            analysis = {
+              extraPaths = { './m7_driver_support_hpi' },
+            },
+          },
+        },
       },
+      -- Другие серверы, например:
       -- rust_analyzer = {},
       -- tsserver = {},
-      -- и т.д.
     }
 
     -- mason + mason-lspconfig
