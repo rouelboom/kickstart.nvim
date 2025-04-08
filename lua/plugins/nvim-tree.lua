@@ -30,6 +30,7 @@ return {
     }
 
     -- Маппинг для открытия/закрытия дерева
+    vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
   end,
 }
