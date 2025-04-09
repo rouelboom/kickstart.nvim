@@ -10,7 +10,13 @@ return {
       default_direction = 'prefer_right',
     },
     show_guides = true,
-    filter_kind = false,
+    autojump = true,
+    open_automatic = true,
+    filter_kind = {
+      'Class',
+      'Function',
+      'Method',
+    },
   },
   keys = {
     {
