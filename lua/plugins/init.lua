@@ -17,6 +17,7 @@ return require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.nvim-tree',
   require 'plugins.neogit',
+  require 'plugins.aerial',
   --  require 'plugins.lspconfig',
 }, {
   -- Дополнительные настройки UI
